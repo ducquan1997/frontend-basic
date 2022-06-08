@@ -1,0 +1,84 @@
+/*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+/* 
+      MAIN COLOR: #087f5b
+      GREY COLOR: #343a40
+      */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  line-height: 1;
+}
+
+.accordion {
+  width: 700px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: center;
+  padding: 24px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 10%);
+}
+
+.item span {
+  font-size: 1.5em;
+  color: #ced4da;
+}
+
+.item h3 {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.icon {
+  color: #087f5b;
+  width: 24px;
+}
+
+.open {
+  border-top: 4px solid #087f5b;
+}
+
+.open span,
+.open h3 {
+  color: #087f5b;
+}
+
+.open .item-box {
+  display: block;
+}
+
+.item-box {
+  display: none;
+  grid-column: 2;
+}
+
+.item-box p {
+  margin-bottom: 24px;
+}
+
+.item-box ul {
+  color: #868e96;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

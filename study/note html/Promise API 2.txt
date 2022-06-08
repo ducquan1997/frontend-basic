@@ -1,0 +1,34 @@
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+</head>
+<body>
+    <ul id="users-block"></ul>
+
+    <script src="./main.js"></script>
+</body>
+</html>
+
+//main.js
+var usersApi = 'https://jsonplaceholder.typicode.com/users';
+
+fetch(usersApi)
+    .then(function(response) {
+        return response.json();
+        // JSON.parse: JSON --> Javascript types
+    })
+    .then(function(users) {
+        console.log(users);
+
+        var htmls = users.map(function(user) {
+            return `<li>Name: ${user.name} </br> Phone: ${user.phone}</li>`
+        })
+
+        var html = htmls.join('')
+        document.getElementById('users-block').innerHTML = html
+
+    })

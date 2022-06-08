@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  line-height: 1;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 80px 400px 1fr 240px;
+  grid-template-rows: 80px 1fr;
+}
+
+nav {
+  background-color: #343a40;
+  color: #fff;
+  grid-row: 1 / -1;
+}
+
+menu {
+  background-color: #7048e8;
+  color: #fff;
+  grid-column: 2 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 40px;
+}
+
+button {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 12px;
+  color: #fff;
+  background-color: #5f3dc4;
+  border: none;
+  cursor: pointer;
+}
+
+button:last-child {
+  background-color: #d6336c;
+  margin-left: auto;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+section {
+  background-color: #e9ecef;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: scroll;
+}
+
+.email {
+  background-color: #adb5bd;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  height: 96px;
+}
+
+main {
+  padding: 24px 8px;
+}
+
+aside {
+  padding: 24px 8px;
+  background-color: #e9ecef;
+}

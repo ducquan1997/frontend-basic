@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonial Section</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <section>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testimonial-box">
+                        <img class="quote" src="./assets/img/right-quote.png" alt="quote">
+                        <div class="content">
+                            <p>Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use</p>
+                            <div class="details">
+                                <div class="user-img">
+                                    <img src="./assets/img/user/img1.jpg" alt="user-img">
+                                </div>
+                                <h3>Alatika Remeo<br/><span>Creative Designer</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial-box">
+                        <img class="quote" src="./assets/img/right-quote.png" alt="quote">
+                        <div class="content">
+                            <p>Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use</p>
+                            <div class="details">
+                                <div class="user-img">
+                                    <img src="./assets/img/user/img2.jpg" alt="user-img">
+                                </div>
+                                <h3>Alatika Remeo<br/><span>Creative Designer</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial-box">
+                        <img class="quote" src="./assets/img/right-quote.png" alt="quote">
+                        <div class="content">
+                            <p>Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use</p>
+                            <div class="details">
+                                <div class="user-img">
+                                    <img src="./assets/img/user/img3.jpg" alt="user-img">
+                                </div>
+                                <h3>Alatika Remeo<br/><span>Creative Designer</span></h3>                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2,
+                slideShadows: true,
+            },
+            loop: true,
+        });
+      </script>
+</body>
+</html>

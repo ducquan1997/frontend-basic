@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #03a9f4;
+    transition: 0.5s;
+}
+
+body.active {
+    background-color: #f43648;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+.container-background {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15)
+}
+
+.box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box h2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.box button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    border: none;
+}
+
+.form-bx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgba(0,0,0,0.15);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.form-bx.active {
+    left: 50%;
+}
+
+.form-bx.active .form-bx__signin {
+    left: -100%;
+}
+
+.form-bx .form-bx__signup {
+    left: 100%;
+}
+
+.form-bx.active .form-bx__signup {
+    left: 0;
+}
+
+.form {
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+}
+
+.form h3 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+}
+
+.form input[type="submit"] {
+    background-color: #03a9f4;
+    border: none;
+    color: #fff;
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.form-bx__signup input[type="submit"] {
+    background-color: #f43648;
+}
+
+.form input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+.form .forgot {
+    color: #333;
+    
+}
+
+.form .forgot:hover {
+    opacity: 0.8;
+}

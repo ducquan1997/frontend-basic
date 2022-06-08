@@ -1,0 +1,110 @@
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+</head>
+<body>
+    <ul id="comment-block"></ul>
+
+    <script src="./main.js"></script>
+</body>
+</html>
+
+
+
+// main.js
+var users = [
+    {
+        id: 1,
+        name: 'Duc Quan',
+    },
+    {
+        id: 2,
+        name: 'Son Dang',
+    },
+    {
+        id: 3,
+        name: 'Muoi bay',
+    } ,
+];
+
+var comments = [
+    {
+        id: 1,
+        user_id: 1,
+        content: 'Anh Son chua ra video',
+    },
+    {
+        id: 2,
+        user_id: 2,
+        content: 'Vua ra xong em oi',
+    },
+    {
+        id: 1,
+        user_id: 1,
+        content: 'Thank anh',
+    },
+];
+
+// 1. Lấy comments
+// 2. Từ comments lấy ra được user_id
+// 3. Từ user_id lấy ra user tương tứng
+// 4. Fake API
+
+// 1. Hàm Fake API lấy comments
+function getComments() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve(comments);
+        }, 1000);
+        console.log('comments: ', comments)
+    });
+}
+
+// Hàm lấy users từ user_id
+function getUsersByIds(userIds) {
+    return new Promise(function(resolve){
+        var result = users.filter(function(user) {
+            return userIds.includes(user.id);
+        })
+        setTimeout(function() {
+            resolve(result);
+        }, 1000);
+    });
+}
+
+getComments()  
+    .then(function(comments) {            
+        // Lấy user_id từ comment
+        var userIds = comments.map(function(comment) {
+            return comment.user_id;
+        });
+        console.log('userIds: ', userIds);
+
+
+        return getUsersByIds(userIds)
+            .then(function(users) {
+                return {
+                    users: users,
+                    comments: comments,
+                };
+            });
+    })
+    .then(function(data) {
+        console.log(data)
+        
+        var commentBLock = document.getElementById('comment-block');
+        var html = '';
+
+        data.comments.forEach(function(comment) {
+            var user = data.users.find(function(user) {
+                return user.id === comment.user_id;
+            });
+            html += `<li>${user.name}: ${comment.content}</li>`;
+        });
+
+        commentBLock.innerHTML = html;
+    })

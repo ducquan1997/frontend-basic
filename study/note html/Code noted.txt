@@ -1,0 +1,209 @@
+------- Chu' y':
+0.Grid System:
+--- Grid
+--- Row 
+--- Column: PC-12/16, Tablet: 8, Mobile: 4
+--- Gutter (duong ngan cach): PC: 24px (12 + 12), Tablet: 16px (8 + 8), Mobile: 8px (4 + 4)
+--- Margin (phan le)
+
+1.The a can` code them: 	
+	{
+	text-decoration: none;
+    	color: transparent;
+	}
+
+2.Responsive:
+---Mobile: 	width < 740px
+	@media only screen and (max-width: 46.1875em) {
+    
+	}
+
+---Tablet: 	width >= 740px and width < 1024px	
+	@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+	}
+
+---PC:		width >= 1024px
+
+3.NAV-Overlay:
+<div>...</div> --> <label for="nav__mobile-input">...</label>
+
+---html:
+	<label for="nav__mobile-input" class="nav__bars-btn">                
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+        </label>
+                
+        <input type="checkbox" name="" class="nav__input" id="nav__mobile-input">
+
+        <label for="nav__mobile-input" class="nav__overlay"></label>
+	
+	<nav class="nav__mobile">
+        	<label for="nav__mobile-input" class="nav__mobile-close">                      
+                	<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                </label>
+
+                <ul class="nav__mobile-list">
+                       	<li><a href="" class="nav__mobile-link">Home</a></li>
+                        <li><a href="" class="nav__mobile-link">About</a></li>
+		</ul>
+	</nav>
+---css:
+.nav__overlay {
+    	position: fixed;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background-color: rgba(0, 0, 0, 0.3);
+	}
+
+.nav__input:checked ~ .nav__overlay {
+    	display: block;
+}
+
+.nav__input:checked ~ .nav__mobile {
+    	transform: translateX(0);
+}
+
+4. 
+	user-select: none;
+   	-webkit-user-select: none;
+    	-webkit-tap-highlight-color: transparent;
+
+-------Boder:
+.class::before {
+	content: "";
+    	border-top: 1px solid #e1e1e1; /* border-bottom, border-right,... */
+    	position: absolute;
+    	top: 0;
+	left: 0;	
+	}
+
+-------Tam giac' 4:
+.class::before {  
+    	content: "";
+    	position: absolute;
+    	left: 8px;
+    	top: 50%;
+    	transform: translateY(-50%);
+    	border-width: 4px;
+    	border-style: solid;
+    	border-color: transparent transparent transparent var(--primary-color);
+	}
+
+-------Cot ngang noi':
+.class::before {
+	content: "";
+    	display: block;
+	position: absolute;
+    	right: 0;
+    	top: -15px;
+    	width: 90%;
+    	height: 20px;
+	}
+
+-------Background-img:
+.class {
+	padding-top: 100%;
+    	background-repeat: no-repeat;
+    	background-size: contain;
+    	background-position: center;
+	}
+
+-------Ten + ... :
+.class {
+	overflow: hidden;
+    	display: block;
+    	display: -webkit-box;
+    	-webkit-box-orient: vertical;
+    	-webkit-line-clamp: 2;
+	}
+---
+.class {
+	overflow: hidden;
+    	display: block;
+	text-overflow: ellipsis;
+    	white-space: nowrap; 
+	}
+
+-------Nav keo' dai` mobile: 
+.ul {
+	display: flex;
+	
+    	...
+    	max-width: 100%;
+    	overflow-x: auto;
+	}
+---
+li {
+	flex-shrink: 0;
+	}
+--- Set 3 mau lien tiep:
+.li:nth-of-type(3n + 1) {
+    	background-color: #86afd7;
+	}
+
+.li:nth-of-type(3n + 2) {
+    	background-color: #76c9bd;
+	}
+
+.li:nth-of-type(3n + 3) {
+    	background-color: #88cf81;
+	}
+
+-------Tam giac' 2:
+.class::after {
+	content: "";
+   	position: absolute;
+    	border-top: 4px solid #913113;
+    	border-left: 4px solid transparent;
+    	left: 0;
+    	bottom: -4px;
+	}
+---
+.class::after {
+	content: "";
+    	position: absolute;
+    	left: 0;
+    	bottom: -4px;
+    	border-width: 0 20px 4px;
+    	border-style: solid;
+    	border-color: transparent rgb(255, 217, 64, 0.95) transparent rgb(255, 217, 64, 0.95);
+	}
+
+-------Animation: 
+.class {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	transition: tranform linear 0.1s;
+    	will-change: transform;
+	.....
+	}
+
+.class:hover {
+	box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+    	transform: translateY(-1px);
+	}
+---
+.class {
+	right: 0;
+	transition: right linear 0.1s;
+	}
+
+.class:hover {
+	right: -4px;
+	}
+
+-------Object.assign
+Object.assign(boxElement.style, {
+	width: '200px'
+	heiht: '100px'
+	backgroundColor: 'green'
+});
+
+-------Dom Event onclick
+var h1Elements = document.querySelectorAll('h1');
+for(var i = 0; i < h1Elements.length; ++i) {
+	h1Elements[i],onclick = function(e) {
+		console.log(e.target);
+	}
+}
